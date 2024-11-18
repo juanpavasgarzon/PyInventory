@@ -2,12 +2,13 @@ from fastapi import HTTPException
 
 from core.product.dtos.create_product_dto import CreateProductDto
 from core.product.dtos.product_dto import ProductDto
+from core.product.entities.product import Product
 from core.product.router import product_router
 from core.product.services.create_product_service import add_product_service
 
 
 @product_router.post("/", response_model=ProductDto)
-async def create_product(product: CreateProductDto):
+async def create_product_endpoint(product: CreateProductDto) -> ProductDto:
     """
     Endpoint to create a new product.
 

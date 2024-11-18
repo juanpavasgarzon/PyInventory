@@ -7,7 +7,7 @@ from core.document.services.create_document_service import create_document_servi
 
 
 @document_router.post("/", response_model=DocumentDto)
-async def create_document(document: CreateDocumentDto):
+async def create_document_endpoint(document: CreateDocumentDto):
     """
     Endpoint for creating a new document.
 
@@ -25,7 +25,10 @@ async def create_document(document: CreateDocumentDto):
         HTTPException: If the document creation fails or if the document is not found, a 404 error is raised.
 
     Example:
+        Create a document:
         POST /documents
+
+        Request Body:
         {
             "reference": "DOC-001",
             "concept": "Purchase Order",
@@ -36,6 +39,17 @@ async def create_document(document: CreateDocumentDto):
             ]
         }
 
+        Response:
+        {
+            "id": "60b91b5e64e2a9f024f5b051",
+            "reference": "DOC-001",
+            "concept": "Purchase Order",
+            "description": "Order for office supplies",
+            "items": [
+                {"product_id": "123", "quantity": 10},
+                {"product_id": "456", "quantity": 5}
+            ]
+        }
     """
     items = [item.to_dict() for item in document.items]
     product = await create_document_service(document.reference, document.concept, items, document.description)

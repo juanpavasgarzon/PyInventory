@@ -6,7 +6,7 @@ from core.product.services.get_all_products_service import get_all_products_serv
 
 
 @product_router.get("/", response_model=List[ProductDto])
-async def list_products():
+async def list_products_endpoint() -> List[ProductDto]:
     """
     Endpoint to retrieve a list of all products.
 

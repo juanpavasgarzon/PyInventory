@@ -7,7 +7,7 @@ from core.product.services.update_product_service import update_product_service
 
 
 @product_router.put("/{product_id}", response_model=ProductDto)
-async def update_product(product_id: str, product: UpdateProductDto):
+async def update_product_endpoint(product_id: str, product: UpdateProductDto):
     """
     Endpoint to update an existing product.
 

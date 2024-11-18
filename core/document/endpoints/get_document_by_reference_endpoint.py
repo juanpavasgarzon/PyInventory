@@ -24,6 +24,7 @@ async def get_document_by_reference_endpoint(reference: str):
 
     Example:
         GET /documents/DOC-001
+
         Response:
         {
             "id": "60c72b2f9b1d8f7c6d0f1a2d",
@@ -36,7 +37,6 @@ async def get_document_by_reference_endpoint(reference: str):
                 {"product_id": "123", "product_code": "P001", "product_name": "Product 1", "product_description": "Description of Product 1", "quantity": 10, "price": 15.0, "total": 150.0}
             ]
         }
-
     """
     product = await get_document_by_reference_service(reference)
     if product is None:
