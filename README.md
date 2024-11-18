@@ -22,7 +22,7 @@ Setup Instructions:
 -------------------
 1. Clone the repository:
    ```
-   git clone <repository_url>
+   git clone https://github.com/juanpavasgarzon/PyInventory
    cd PyInventory
    ```
 
@@ -75,4 +75,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Support:
 --------
-For any issues or queries, please contact [your_email@example.com].
+For any issues or queries, please contact [garzonp2001@gmail.com].
